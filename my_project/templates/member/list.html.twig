@@ -1,0 +1,10 @@
+            {% for member in member %}
+             <p>{{member.firstName}}</p>
+             <h3>{{member.lastName}}</h3>
+             <h3>{{member.email}}</h3>
+
+             <a href="{{path('delete_member',{'id':member.id})}}">delete</a>
+             <img width="10%" src="{{ asset ('uploads/brochures/')~member.photo}}">
+             <a href="{{path('member_vue',{'id':member.id})}}">vue</a>
+
+              {% endfor %}

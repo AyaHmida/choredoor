@@ -1,0 +1,36 @@
+ {% extends 'base.html.twig' %}
+
+ {% block section %}
+ <br><br>
+
+<div class="container-fluid pt-5">
+  <div class="row px-xl-5 pb-3">
+  <h3 class="text-center">Parfums Add with Users</h3><br><br><br><br>
+
+   {% for parfum in parfums %}  
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1" style="height: 500px; overflow: hidden;"><br>
+         
+     <div class="card" style="width: 18rem;">
+        <a href="#"><img class="card-img-top" width="100%" src="{{ asset('uploads/brochures/')~parfum.photo }}" alt="Card image cap"></a>
+        <div class="card-body">
+          <h2>{{ parfum.Name }}</h2>
+          <p>{{ parfum.description }}</p>
+          <h4>{{ parfum.prix }} TND</h4> 
+<button type="button" class="btn btn-outline-dark"><a href="{{path('delete_parfums',{'id':parfum.id})}}">delete</a></button>
+   </button>     
+   <a  class="btn btn-outline-info" href="{{ path('parfums_show', {'id': parfum.id}) }}"> Show</a>
+
+           </div>
+        </div> 
+        </div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;{% endfor %}
+            </div>
+            </div>
+
+          </div><br><br><br>
+ 
+ 
+ 
+
+
+           
+{% endblock %}

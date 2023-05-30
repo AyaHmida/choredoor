@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+
+{% block section %}
+<div class="container">
+<br>
+<br><br><br><br>
+    <h1>Parfums index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for parfum in parfums %}
+            <tr>
+                <td>{{ parfum.id }}</td>
+                <td>{{ parfum.Name }}</td>
+                <td>{{ parfum.description }}</td>
+                <td>{{ parfum.photo }}</td>
+                <td>{{ parfum.prix }}</td>
+                <td>
+                    <a href="{{ path('app_parfums12_show', {'id': parfum.id}) }}">show</a>
+                    <a href="{{ path('app_parfums12_edit', {'id': parfum.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_parfums12_new') }}">Create new</a></div>
+{% endblock %}

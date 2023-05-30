@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+{{form_label(form.name)}}
+{{form_widget(form.name,{'attir':{'class':'form_control'}})}}
+        {{ form_errors(form.name) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+

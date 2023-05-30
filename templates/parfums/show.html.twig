@@ -1,0 +1,27 @@
+   {% extends 'base.html.twig' %}
+
+ {% block section %}
+   <div class="container">
+        <h2 class="text-center mt-5 mb-3">Show Project</h2>
+
+            <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Photo</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img class="card-img-top" width="90px"  height="180px" src="{{ asset('uploads/brochures/')~parfums.photo }}" alt="Card image cap"></td>
+      <td>{{ parfums.name }}</td>
+      <td>{{ parfums.prix }}</td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+                
+    </div>
+    {% endblock %}
